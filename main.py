@@ -38,7 +38,7 @@ def evaluate_model_regression(label_col, name, data_to_validate):
     evaluator = BinaryClassificationEvaluator(labelCol=label_col, metricName=name, rawPredictionCol='rawPrediction')
     print("{}:{}".format(name,evaluator.evaluate(data_to_validate)))
 
-def execute_logistic_regression_binomial(sc, url, spark)
+def execute_logistic_regression_binomial(sc, url, spark):
     ''' Regresion binomial '''
     print("------------ Regresion binomial --------------")
 
@@ -69,7 +69,7 @@ def execute_logistic_regression_binomial(sc, url, spark)
     evaluate_model_regression(label_col, 'areaUnderROC',data_to_validate)
     evaluate_model_regression(label_col, 'areaUnderPR',data_to_validate)
 
-def execute_logistic_regression_multiclass(sc, url, spark)
+def execute_logistic_regression_multiclass(sc, url, spark):
     ''' Regresion Multiclase '''
     print("------------ Regresion multiclase --------------")
 
@@ -106,7 +106,7 @@ def main():
     sc = SparkContext(conf=conf)
     spark = SparkSession(sc)
     
-    #execute_logistic_regression_binomial(sc, "data/dataConRating1.csv", spark)
+    execute_logistic_regression_binomial(sc, "data/dataConRating1.csv", spark)
     execute_logistic_regression_multiclass(sc, "data/dataConRating2.csv", spark)
 
 if __name__ == '__main__':

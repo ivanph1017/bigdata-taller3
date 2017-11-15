@@ -14,9 +14,9 @@ def main():
     sc = SparkContext(conf=conf)
     spark = SparkSession(sc)
 
-    rdd = sc.textFile("data/FullData-modif.csv").map(lambda linea: linea.split(","))
+    rdd = sc.textFile("data/data1.csv").map(lambda linea: linea.split(","))
 
-    rdd_data = rdd.map(lambda x: [int(x[0]), int(x[1]), int(x[2]), int(x[3]),int(x[4]),int(x[5]),int(x[6]),int(x[7]),int(x[8]),int(x[9]),int(x[10]),int(x[11]),int(x[12]),int(x[13]),int(x[14]),int(x[15]),int(x[16]),int(x[17]),int(x[18]),int(x[19]),int(x[20]),int(x[21]),int(x[22]),int(x[23]),int(x[24]),int(x[25]),int(x[26]),int(x[27]),int(x[28]),int(x[29]),int(x[30]),int(x[31]),int(x[32])])
+    rdd_data = rdd.map(lambda x: [int(x[1]), int(x[2]), int(x[3]),int(x[4]),int(x[5]),int(x[6]),int(x[7]),int(x[8]),int(x[9]),int(x[10]),int(x[11]),int(x[12]),int(x[13]),int(x[14]),int(x[15]),int(x[16]),int(x[17]),int(x[18]),int(x[19]),int(x[20]),int(x[21]),int(x[22]),int(x[23]),int(x[24]),int(x[25]),int(x[26]),int(x[27]),int(x[28]),int(x[29]),int(x[30]),int(x[31]),int(x[32]),int(x[33])])
     #rdd.foreach(lambda x: print(x))
     headers = ["PRE_POS","WF","SM","BC","DRI","MA","SLT","STT","AG","REACT","AP","INT","VI","CO","CRO","SP","LP","ACC","SPEED","STA","STR","BA","AGI","JU","HE","SHP","FI","LS","CU","FA","PE","VOL","RA"]
 

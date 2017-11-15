@@ -65,7 +65,8 @@ def execute_logistic_regression_binomial(sc, url, spark):
     print("Testing model ...")
 
     data_to_validate = lr_model_binomial.transform(test_data)
-
+    data_to_validate.show()
+    
     evaluate_model_regression(label_col, 'areaUnderROC',data_to_validate)
     evaluate_model_regression(label_col, 'areaUnderPR',data_to_validate)
 
@@ -96,6 +97,7 @@ def execute_logistic_regression_multiclass(sc, url, spark):
     test_data = convert_dataframe(test, features, output)
 
     data_to_validate = lr_model_multiclass.transform(test_data)
+    data_to_validate.show()
 
     evaluate_model_regression(label_col, 'areaUnderROC',data_to_validate)
     evaluate_model_regression(label_col, 'areaUnderPR',data_to_validate)
